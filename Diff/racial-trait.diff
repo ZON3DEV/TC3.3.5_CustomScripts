@@ -1610,26 +1610,6 @@ index 00000000000..266a61cc0a9
 +    new Trinitycore_Race_Trait_announce();
 +    new npc_race_trait_swap();
 +}
-diff --git a/src/server/scripts/Custom/custom_script_loader.cpp b/src/server/scripts/Custom/custom_script_loader.cpp
-index cb7667acfef..66a5f34eae0 100644
---- a/src/server/scripts/Custom/custom_script_loader.cpp
-+++ b/src/server/scripts/Custom/custom_script_loader.cpp
-@@ -59,7 +59,7 @@
- // 37
- // 38
- // 39
--// 40
-+void AddSC_racial_traits_npc();
- 
- void AddCustomScripts()
- {
-@@ -102,5 +102,5 @@ void AddCustomScripts()
-     // 37
-     // 38
-     // 39
--    // 40
-+    AddSC_racial_traits_npc();
- }
 diff --git a/src/server/scripts/Custom/sql/world.RacialSwapNPC.sql b/src/server/scripts/Custom/sql/world.RacialSwapNPC.sql
 new file mode 100644
 index 00000000000..fc32ce89c6a
@@ -1792,37 +1772,4 @@ index 00000000000..fc32ce89c6a
 +(988880, 'esES', 'Saludos $n. \r\nPuedes intercambiar tus rasgos y habilidades raciales con los de los no muertos. Si la raza que elegiste no tiene $c, desaprenderás tus $c rasgos raciales. \r\nAprenderás Canibalizar, Resistencia a las sombras, Respiración submarina y Voluntad de los renegados. \r\n\r\n ¿Cual es tu deseo?', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 +(988880, 'esMX', 'Saludos $n. \r\nPuedes intercambiar tus rasgos y habilidades raciales con los de los no muertos. Si la raza que elegiste no tiene $c, desaprenderás tus $c rasgos raciales. \r\nAprenderás Canibalizar, Resistencia a las sombras, Respiración submarina y Voluntad de los renegados. \r\n\r\n ¿Cual es tu deseo?', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 +(988880, 'ruRU', 'Привет $n. \r\nВы можете поменять свои расовые черты и способности на способности Нежити. Если выбранная вами раса не имеет $c, вы откажетесь от своих $c расовых черт. \r\nВы научитесь каннибализму, сопротивлению теням, подводному дыханию и воле отрекшихся. \r\n\r\nЧто твое желание?', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-diff --git a/src/server/worldserver/worldserver.conf.dist b/src/server/worldserver/worldserver.conf.dist
-index f475d0248e8..b3db97c17f9 100644
---- a/src/server/worldserver/worldserver.conf.dist
-+++ b/src/server/worldserver/worldserver.conf.dist
-@@ -4125,3 +4125,28 @@ Metric.OverallStatusInterval = 1
- 
- #
- ###################################################################################################
-+
-+###################################################################################################
-+#Trinitycore Racial Trait Swap NPC  #
-+#####################################
-+#
-+#    Trinitycore Racial Trait NPC
-+#        For a cost, you can swap our you current racial traits for that of another.
-+#
-+#    Trinitycore.Racial.Trait.Swap.Announce.enable
-+#         Description: Announces Module when player logs in.
-+#         Default:    0 - (Disabled)
-+#                     1 - (Enabled)
-+
-+Trinitycore.Racial.Trait.Swap.Announce.enable = 1
-+
-+#
-+#    Racial.Traits.Swap.Gold
-+#         Description:  Cost in gold for Racial Trait Exchange.
-+#         Default:    0 - (Zero Gold Free)
-+#                     10 - (Ten Gold Cost)
-+
-+Racial.Traits.Swap.Gold = 10
-+
-+#
-+###################################################################################################
 \ No newline at end of file
